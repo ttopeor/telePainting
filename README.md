@@ -1,12 +1,12 @@
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/ttopeor/tele_painting/blob/main/SceneAll.jpg)
 ### Team: Yue Feng, Weicheng Huang
+### youtube Link: https://www.youtube.com/watch?v=Ian9UkIapt0
 ##### We propose a novel software architecture and system design for remotely operating industrial manipulators using a virtual reality interface. The system is based on reconstructing the 3D environment around the manipulator, transmitting and displaying it to the operator in a virtual reality headset via the internet. The operator can then use motion trackers and other input devices to control the manipulator and interact with the environment. The proposed framework leverages and integrates a variety of technologies across multi-computing platforms, such as Unreal Engine 4, MQTT, Nodejs, etc. In this paper, we display the design and implementation of this system, as well as the results of tests conducted to evaluate its performance and effectiveness. Overall, the software framework is shown to be a promising approach for improving the efficiency of developing a VR-based industrial manipulator teleoperation system.
 
 ### 1. Design Goals
-![alt text](http://url/to/img.png)
-##### As shown in Figure above, the operator is using a motion tracker to interact with a VR workspace that is being transmitted from a factory site. The virtual workspace is a 3D representation of the actual workspace where the manipulators are located, and it is captured by a 3D camera. The operator can move around within the VR workspace and interact with the objects as if they were physically present at the factory site. By using input devices such as motion trackers, joysticks, and buttons, the operator is allowed to remotely controls the manipulators at the factory site to perform tasks from a distance.
+##### As shown in Figure at the top, the operator is using a motion tracker to interact with a VR workspace that is being transmitted from a factory site. The virtual workspace is a 3D representation of the actual workspace where the manipulators are located, and it is captured by a 3D camera. The operator can move around within the VR workspace and interact with the objects as if they were physically present at the factory site. By using input devices such as motion trackers, joysticks, and buttons, the operator is allowed to remotely controls the manipulators at the factory site to perform tasks from a distance.
 ### 2.Communication
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/ttopeor/tele_painting/blob/main/workflow.png)
 #### a)Process
 ##### As shown in Figure above. Two x86-based computers were set up in different physical locations and connected to the same network. The teleoperator runs a VR application with a headset device on one of the two computers. The other computer runs Linux and all microservices that orchestrate the manipulator and depth sensor.
 ##### -	The operator first initiated the request to scan the remote workspace and once it was completed, a point cloud file was downloaded and rendered in the VR workspace. This point cloud file is stored and can be used in the future without rescanning.
@@ -16,7 +16,8 @@
 ##### -	The actual playback on the manipulator can be triggered by either a remote teleoperator through a VR application or an onsite operator via the web frontend application.
 
 #### b) Other Workflows
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/ttopeor/tele_painting/blob/main/workflow2.png)
+![alt text](https://github.com/ttopeor/tele_painting/blob/main/workflow3.png)
 ##### As shown in Figure above, The system supports multiple other workflows ranging from debugging and hyperparameter tuning via the web frontend. Operators of the manipulator can tune the lower-level motion control parameters such as the PID coefficient. sensor reading, command refreshing rate as well as digital model twisting such as joint angle allow range. joint angle max speed. In addition, technicians can also simulate and watch the real-time manipulator pose or trajectory playback result through a web interface.
 #### c) Protocol
 #####  MQTT is a publish/subscribe protocol that is widely used in IoT development and edge computing due to its minimal data schema, easy-to-understand message process flow, and ability to run on a variety of devices and programming languages. It is well-suited for handling sensor data ingestion and consumption and offers a range of transport protocols and message retention policies. 
@@ -30,7 +31,7 @@
 ##### In the final implementation of the system, both Node. js-based JavaScript and Python were used in order to take advantage of the strengths of both languages. Node.js was used for tasks that required high-performance I/O processing such as HTTP web service, and file read-write, while Python was used for tasks that required more computational power such as robot kinematics and point cloud processing.
 
 ### 3.Architecture
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/ttopeor/tele_painting/blob/main/architecture.png)
 ##### Figure above shows the proposed architecture, which is based on the concept of microservices, which involves breaking down a monolithic application into smaller, highly cohesive, and loosely coupled modules. This allows for the use of multi-threaded computing, faster prototyping and testing, and the ability to easily swap out individual components. 
 ##### This architecture is designed to have minimal programming requirements, meaning that each component can be implemented in the programming language of the developer's choice without the need to consider the design of other components. This allows for greater flexibility and modularity, as developers can focus on implementing their specific components without worrying about compatibility with other parts of the system. As a result, this architecture allows for faster development and easier maintenance, as changes to one component can be made without affecting the rest of the system.
 ##### The proposed architecture uses HTTP for function calls and MQTT for data broadcasting as its communication protocols. This allows the microservices to run in a wide range of environments and network configurations, as both HTTP and MQTT are widely used and supported. By using these protocols, the microservices can communicate with each other and perform their intended functions without being restricted by the specific architecture or topology of the system. This helps to ensure that the system is flexible and adaptable and can be easily integrated into different types of environments.
@@ -48,3 +49,4 @@
 ##### To address the issue of data mismatches in the calculation of VR manipulator teaching positions, a Python-based microservice was deployed to pre-process data received from VR applications. In particular, this microservice is responsible for handling differences in the coordinate systems used by the VR engine (Unreal) and the mathematical model for manipulators. Unreal uses a left-hand coordinate system with clockwise positive rotation on the Z axis and counter-clockwise positive rotation on the X and Y axes, while the mathematical model uses a right-hand coordinate system with counter-clockwise positive rotation on all axes. This microservice is also responsible for initiating manipulator track playback by making HTTP requests to the core orchestration applications previously mentioned. By handling these tasks, the microservice helps to ensure that the VR and manipulator systems can work together smoothly and accurately.
 ##### -VR application
 ##### The VR application was built using blueprint technology in the Unreal Engine. This powerful rendering engine allows for the rapid creation of a demo metaverse environment and easy integration with the dedicated Linux server that runs all the microservices. The use of the Unreal Engine allows for high-quality graphics and a wide range of features, making it an ideal choice for building immersive VR experiences.
+![alt text](https://github.com/ttopeor/tele_painting/blob/main/technology.png)
