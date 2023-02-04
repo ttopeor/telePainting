@@ -1,0 +1,28 @@
+{
+  "folders": [
+    {
+      "path": "Driver"
+    },
+    {
+      "path": "TeensyFirmware"
+    },
+    {
+      "path": "web-service"
+    },
+    {
+      "path": "nodedriver"
+    },
+    {
+      "path": "ws_moveit"
+    },
+    {
+      "path": "simulator"
+    },
+    {
+      "path": "3DScanService"
+    }
+  ],
+  "settings": {
+    "typescript.tsdk": "simulator/node_modules/typescript/lib"
+  }
+}

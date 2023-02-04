@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <meta charset="utf-8" />
+    <title>Simple URDF</title>
+    <style>
+      html,
+      body {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #336699;
+      }
+      .angle {
+        z-index: 100;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: white;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="angle">
+      <h1 id="current"></h1>
+      <h1 id="destination"></h1>
+    </div>
+    <script src="urdf.js"></script>
+  </body>
+</html>
